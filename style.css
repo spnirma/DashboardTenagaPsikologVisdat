@@ -26,7 +26,7 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #1a7a4a 0%, #2ecc71 45%, #f4d03f 75%, #f39c12 100%);
+  background: linear-gradient(135deg, #1a7a4a 0%, #ffffff 35%, #f4d03f 65%, #2ecc71 100%);
   padding: 64px 24px 80px;
   position: relative;
   overflow: hidden;
