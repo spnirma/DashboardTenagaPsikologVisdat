@@ -4,17 +4,17 @@
 
 ## Isi Dashboard
 
-- Chart 1: Bar Chart (stacked) — jumlah psikolog per provinsi berdasarkan jenis fasilitas
-- Chart 2: Pie Chart — proporsi nasional per jenis fasilitas kesehatan
-- Chart 3: Doughnut Chart — kontribusi 10 provinsi teratas terhadap total nasional
-- Chart 4: Line Chart — perbandingan RS vs Faskes Lainnya, 20 provinsi teratas
+- Chart 1: Bar Chart (stacked), jumlah psikolog per provinsi berdasarkan jenis fasilitas
+- Chart 2: Pie Chart, proporsi nasional per jenis fasilitas kesehatan
+- Chart 3: Doughnut Chart, kontribusi 10 provinsi teratas terhadap total nasional
+- Chart 4: Line Chart, perbandingan RS vs Faskes Lainnya, 20 provinsi teratas
 - Fitur interaktif: tooltip hover, klik chart untuk insight, filter dan pencarian tabel
 - Animasi: entrance Chart.js, count-up KPI, fade-in card
 
 ## Sumber Data
 
-- Nama dataset: Data Tenaga Kesehatan — Psikologi Klinis per Provinsi
-- URL sumber: https://data.go.id — Kementerian Kesehatan RI
+- Nama dataset: Dataset Jumlah Tenaga Psikologi Klinis di Fasilitas Kesehatan Indonesia
+- URL sumber: https://satusehat.kemkes.go.id/data/dataset/3c84dac1-45e7-4b95-88b1-0823a5baeb1e
 
 ## Cara Jalankan di Lokal
 
@@ -28,5 +28,5 @@ Buka index.html langsung di browser (atau pakai Live Server di VS Code)
 
 ## Anggota
 
-- Nama 1 (NIM)
+- Shinta Putri Nirmala/NIM.1203230052
 - Nama 2 (NIM)
