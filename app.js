@@ -365,19 +365,6 @@ document.querySelectorAll('.card').forEach(card => {
   });
 });
 
-// Efek gelombang mengikuti kursor di dalam card
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mousemove', function(e) {
-    const rect = card.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    card.style.background = card.style.background.includes('radial')
-      ? card.style.background
-      : card.style.background;
-    card.style.setProperty('--mx', x + '%');
-    card.style.setProperty('--my', y + '%');
-  });
-});
 // INIT
 buildKPI();
 buildBar();
@@ -385,3 +372,33 @@ buildPie();
 buildDoughnut();
 buildLine();
 renderTable();
+
+// Ripple air global — aktif di semua .card
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes rippleWave {
+    0%   { width: 0; height: 0; opacity: 0.5; }
+    100% { width: 500px; height: 500px; opacity: 0; }
+  }
+  .ripple-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: rippleWave 0.8s ease-out forwards;
+  }
+`;
+document.head.appendChild(style);
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    const rect = card.getBoundingClientRect();
+    const dot = document.createElement('span');
+    dot.className = 'ripple-dot';
+    dot.style.left = (e.clientX - rect.left) + 'px';
+    dot.style.top  = (e.clientY - rect.top)  + 'px';
+    card.appendChild(dot);
+    setTimeout(() => dot.remove(), 800);
+  });
+});
