@@ -28,5 +28,9 @@ Buka index.html langsung di browser (atau pakai Live Server di VS Code)
 
 ## Anggota
 
-- Shinta Putri Nirmala/NIM.1203230052
-- Nama 2 (NIM)
+1. Shinta Putri Nirmala - 1203230052 
+2. ⁠Agnes Destiny Sava S - 1203230092 
+3. ⁠Neisyah Nurul Alyazara - 1203230098 
+4. ⁠M. Aqil Mahdi Syarif - 1203230067 
+5. ⁠Khusnia fitri - 1203230030 
+6. ⁠M. Fajri Dwi Prasetya S - 1203230076
