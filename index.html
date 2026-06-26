@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Psikologi Klinis Indonesia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Data Kesehatan Indonesia 2024</div>
+      <h1>Sebaran Psikolog Klinis<br /><span class="hero-accent">di Seluruh Indonesia</span></h1>
+      <p class="hero-sub">Distribusi tenaga psikologi klinis di puskesmas, rumah sakit, dan fasilitas kesehatan lainnya berdasarkan provinsi.</p>
+      <div class="kpi-row" id="kpiRow"></div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Distribusi per Fasilitas Kesehatan</h2>
+        <p>Perbandingan jumlah psikolog klinis di tiga jenis fasilitas kesehatan per provinsi</p>
+      </div>
+      <div class="chart-grid">
+        <div class="card chart-card wide" id="card-bar">
+          <div class="card-label">Bar Chart</div>
+          <div class="card-title">Total Tenaga per Provinsi</div>
+          <div class="chart-wrap"><canvas id="barChart"></canvas></div>
+          <div class="chart-insight" id="insightBar"></div>
+        </div>
+        <div class="card chart-card" id="card-pie">
+          <div class="card-label">Pie Chart</div>
+          <div class="card-title">Proporsi per Jenis Fasilitas</div>
+          <div class="chart-wrap"><canvas id="pieChart"></canvas></div>
+          <div class="chart-insight" id="insightPie"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Analisis Lebih Dalam</h2>
+        <p>Perbandingan dan pemerataan distribusi antar wilayah</p>
+      </div>
+      <div class="chart-grid">
+        <div class="card chart-card" id="card-doughnut">
+          <div class="card-label">Doughnut Chart</div>
+          <div class="card-title">10 Provinsi Teratas</div>
+          <div class="chart-wrap"><canvas id="doughnutChart"></canvas></div>
+          <div class="chart-insight" id="insightDoughnut"></div>
+        </div>
+        <div class="card chart-card" id="card-line">
+          <div class="card-label">Line Chart</div>
+          <div class="card-title">Perbandingan RS vs Faskes Lainnya</div>
+          <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
+          <div class="chart-insight" id="insightLine"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Tabel Data Lengkap</h2>
+        <p>Data mentah distribusi psikolog klinis di seluruh provinsi Indonesia</p>
+      </div>
+      <div class="card table-card">
+        <div class="table-controls">
+          <input type="text" id="searchInput" class="search-input" placeholder="Cari provinsi..." />
+          <div class="filter-group">
+            <button class="filter-btn active" data-sort="total">Urutkan: Total</button>
+            <button class="filter-btn" data-sort="rs">Rumah Sakit</button>
+            <button class="filter-btn" data-sort="pusk">Puskesmas</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th>Provinsi</th>
+                <th>Puskesmas</th>
+                <th>Rumah Sakit</th>
+                <th>Faskes Lainnya</th>
+                <th>Total</th>
+                <th>Porsi Nasional</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Sumber data: <a href="https://data.go.id" target="_blank">data.go.id</a> — Kementerian Kesehatan Republik Indonesia</p>
+      <p>Jenis Nakes: Psikologi Klinis — Diperbarui terakhir: Maret 2026</p>
+    </footer>
+
+  </main>
+
+  <div class="insight-modal" id="insightModal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">Tutup</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
