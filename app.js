@@ -336,6 +336,48 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
+// Efek ripple air saat klik
+document.querySelectorAll('.card').forEach(card => {
+  card.style.position = 'relative';
+  card.style.overflow = 'hidden';
+
+  card.addEventListener('click', function(e) {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const ripple = document.createElement('span');
+    ripple.style.cssText = `
+      position: absolute;
+      left: ${x}px;
+      top: ${y}px;
+      width: 0;
+      height: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      pointer-events: none;
+      animation: rippleWave 0.7s ease-out forwards;
+    `;
+
+    card.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 700);
+  });
+});
+
+// Efek gelombang mengikuti kursor di dalam card
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', function(e) {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.background = card.style.background.includes('radial')
+      ? card.style.background
+      : card.style.background;
+    card.style.setProperty('--mx', x + '%');
+    card.style.setProperty('--my', y + '%');
+  });
+});
 // INIT
 buildKPI();
 buildBar();
