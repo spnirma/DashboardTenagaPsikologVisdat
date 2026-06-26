@@ -398,11 +398,3 @@ tbody td { padding: 11px 12px; }
   .chart-card.wide { grid-column: span 1; }
   .kpi-card { min-width: 140px; }
 }
-
-@keyframes rippleWave {
-  to {
-    width: 400px;
-    height: 400px;
-    opacity: 0;
-  }
-}
