@@ -5,8 +5,8 @@
   --green-mid:   #2ecc71;
   --green-light: #a8f0c6;
   --yellow:      #f4d03f;
-  --green:      #2d6a4f;
-  --green-deep: #1b4332;
+  --orange:     #f39c12;
+  --orange-deep: #e67e22; 
   --white:       #ffffff;
   --bg:          #f9fbf8;
   --text:        #1c2b22;
@@ -26,7 +26,7 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #1a7a4a 0%, #ffffff 35%, #f4d03f 65%, #2ecc71 100%);
+  background: linear-gradient(135deg, #1a7a4a 0%, #1a7a4a 35%, #f4d03f 35%, #2ecc71 100%);
   padding: 64px 24px 80px;
   position: relative;
   overflow: hidden;
