@@ -365,6 +365,30 @@ document.querySelectorAll('.card').forEach(card => {
   });
 });
 
+// Tombol unduh dataset
+const downloadBtn = document.createElement('a');
+downloadBtn.href = 'https://satusehat.kemkes.go.id/data/dataset/3c84dac1-45e7-4b95-88b1-0823a5baeb1e';
+downloadBtn.target = '_blank';
+downloadBtn.rel = 'noopener noreferrer';
+downloadBtn.textContent = 'Unduh Dataset Asli';
+downloadBtn.style.cssText = `
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #1a7a4a, #2ecc71);
+  color: white;
+  border-radius: 99px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(26,122,74,0.3);
+  transition: transform 0.2s;
+`;
+downloadBtn.onmouseenter = () => downloadBtn.style.transform = 'scale(1.04)';
+downloadBtn.onmouseleave = () => downloadBtn.style.transform = 'scale(1)';
+
+document.querySelector('.table-card').appendChild(downloadBtn);
 // INIT
 buildKPI();
 buildBar();
